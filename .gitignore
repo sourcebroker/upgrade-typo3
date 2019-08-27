@@ -4,3 +4,5 @@
 !/config/project/.gitkeep
 
 /vendor
+
+/composer.lock
