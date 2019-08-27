@@ -7,6 +7,9 @@ namespace SourceBroker\Typo3Upgrade;
 $typo3RootDir = realpath(getcwd());
 define('T3U_TYPO3_DIR', $typo3RootDir);
 
+$upgradeDir = realpath($_SERVER['OLDPWD']);
+define('T3U_UPGRADE_DIR', $upgradeDir);
+
 require_once(__DIR__ . '/functions.php');
 
 // cleanup opcache
@@ -39,8 +42,8 @@ foreach ($upgradeBranches as $numericVersion => $branch) {
     }
 
     dbUpdate(__DIR__ . '/sql/' . $numericVersion . '.sql');
-    dbUpdate(T3U_ROOT_DIR . '/config/project/'. $numericVersion . '.sql');
-    dbUpdate(__DIR__ . '/config/instances/' . $instance . '/' . $numericVersion . '.sql');
+    dbUpdate(T3U_UPGRADE_DIR . '/config/project/'. $numericVersion . '.sql');
+    dbUpdate(T3U_UPGRADE_DIR . '/config/instances/' . $instance . '/' . $numericVersion . '.sql');
 
     $isFirst = false;
 }

@@ -15,7 +15,7 @@ function clearCache()
 
 function run($command, $return = false)
 {
-    $commandWithDirChange = 'cd '. escapeshellarg(T3U_ROOT_DIR) .' && '. $command;
+    $commandWithDirChange = 'cd '. escapeshellarg(T3U_TYPO3_DIR) .' && '. $command;
 
     $process1 = new Process('echo "------------------>>> ' . $command . '"');
     $process1->setTty(true);
@@ -37,7 +37,7 @@ function run($command, $return = false)
 function getCurrentInstance()
 {
     $dotenv = new Dotenv(true);
-    $dotenv->load(T3U_ROOT_DIR);
+    $dotenv->load(T3U_TYPO3_DIR);
 
     return getenv('INSTANCE');
 }
