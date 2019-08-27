@@ -4,13 +4,13 @@
 namespace SourceBroker\Typo3Upgrade;
 
 // define root path (one dir up)
-$typo3RootDir = realpath(getcwd());
+$typo3RootDir = realpath(getcwd()) . '/';
 define('T3U_TYPO3_DIR', $typo3RootDir);
 
-$upgradeDir = realpath($_SERVER['OLDPWD']);
+$upgradeDir = realpath($_SERVER['OLDPWD']) . '/';
 define('T3U_UPGRADE_DIR', $upgradeDir);
 
-require_once(__DIR__ . '/functions.php');
+require_once(__DIR__ . '/../../autoload.php');
 
 // cleanup opcache
 clearCache();
