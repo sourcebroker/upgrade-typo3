@@ -37,7 +37,7 @@ function run($command, $return = false)
 function getCurrentInstance()
 {
     $dotenv = new Dotenv(true);
-    $dotenv->loadEnv(T3U_TYPO3_DIR . '.env');
+    $dotenv->load(T3U_TYPO3_DIR . '.env');
 
     return getenv('INSTANCE');
 }
