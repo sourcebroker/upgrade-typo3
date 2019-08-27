@@ -1,11 +1,23 @@
 {
-    "require": {
-        "symfony/process": "^4.3",
-        "symfony/dotenv": "^4.3"
-    },
-    "scripts": {
-        "typo3-upgrade": [
-            "php upgrade.php"
-        ]
-    }
+  "name": "sourcebroker/typo3-upgrade",
+  "description": "Typo3 upgrade script.",
+  "license": "MIT",
+  "keywords": [
+    "typo3",
+    "upgrade"
+  ],
+  "require": {
+    "symfony/process": "^4.3",
+    "symfony/dotenv": "^4.3"
+  },
+  "autoload": {
+    "files": [
+      "functions.php"
+    ]
+  },
+  "scripts": {
+    "typo3-upgrade": [
+      "php upgrade.php"
+    ]
+  }
 }

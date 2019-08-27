@@ -1,6 +1,6 @@
 <?php
 
-namespace Typo3Upgrade;
+namespace SourceBroker\Typo3Upgrade;
 
 use Symfony\Component\Dotenv\Dotenv;
 use Symfony\Component\Process\Process;

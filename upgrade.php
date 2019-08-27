@@ -1,7 +1,7 @@
 #!/usr/bin/env php
 <?php
 
-namespace Typo3Upgrade;
+namespace SourceBroker\Typo3Upgrade;
 
 // define root path (one dir up)
 $typo3RootDir = realpath(getcwd());
