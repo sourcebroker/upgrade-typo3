@@ -1,6 +1,6 @@
 {
   "name": "sourcebroker/typo3-upgrade",
-  "description": "Typo3 upgrade script.",
+  "description": "A helper to make TYPO3 upgrade repeatable.",
   "license": "MIT",
   "keywords": [
     "typo3",
