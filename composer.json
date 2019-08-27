@@ -15,9 +15,7 @@
       "functions.php"
     ]
   },
-  "scripts": {
-    "typo3-upgrade": [
-      "php upgrade.php"
-    ]
-  }
+  "bin": [
+    "typo3-upgrade.php"
+  ]
 }
