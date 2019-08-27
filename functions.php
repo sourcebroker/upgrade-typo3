@@ -2,7 +2,7 @@
 
 namespace Typo3Upgrade;
 
-use Dotenv\Dotenv;
+use Symfony\Component\Dotenv\Dotenv;
 use Symfony\Component\Process\Process;
 
 function clearCache()
@@ -15,7 +15,7 @@ function clearCache()
 
 function run($command, $return = false)
 {
-    $commandWithDirChange = 'cd '. escapeshellarg(TYPO3_ROOT_DIR) .' && '. $command;
+    $commandWithDirChange = 'cd '. escapeshellarg(T3U_ROOT_DIR) .' && '. $command;
 
     $process1 = new Process('echo "------------------>>> ' . $command . '"');
     $process1->setTty(true);
@@ -36,8 +36,8 @@ function run($command, $return = false)
 
 function getCurrentInstance()
 {
-    $dotenv = new Dotenv(TYPO3_ROOT_DIR);
-    $dotenv->load();
+    $dotenv = new Dotenv(true);
+    $dotenv->load(T3U_ROOT_DIR);
 
     return getenv('INSTANCE');
 }

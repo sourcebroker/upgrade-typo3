@@ -3,17 +3,10 @@
 
 namespace Typo3Upgrade;
 
-// php configuration
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
 // define root path (one dir up)
-$typo3RootDir = realpath(__DIR__ . '/../');
-define('TYPO3_ROOT_DIR', $typo3RootDir);
-chdir(TYPO3_ROOT_DIR);
+$typo3RootDir = realpath(getcwd());
+define('T3U_TYPO3_DIR', $typo3RootDir);
 
-require_once('./vendor/autoload.php');
 require_once(__DIR__ . '/functions.php');
 
 // cleanup opcache
@@ -46,7 +39,7 @@ foreach ($upgradeBranches as $numericVersion => $branch) {
     }
 
     dbUpdate(__DIR__ . '/sql/' . $numericVersion . '.sql');
-    dbUpdate(__DIR__ . '/config/project/'. $numericVersion . '.sql');
+    dbUpdate(T3U_ROOT_DIR . '/config/project/'. $numericVersion . '.sql');
     dbUpdate(__DIR__ . '/config/instances/' . $instance . '/' . $numericVersion . '.sql');
 
     $isFirst = false;
