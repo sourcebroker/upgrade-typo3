@@ -3,6 +3,8 @@
 The aim of this script is to make process of upgrade repeatable so you can easily repeat it on you local instance and 
 run it also on staging and finally on production instance. 
 
+__Its tested and written to work only with composer based TYPO3.__
+
 ## Install
 
 Create subdirectory in your TYPO3 root (for example `.upgrade`) and inside this folder run:
