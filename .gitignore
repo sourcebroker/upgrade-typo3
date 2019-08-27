@@ -1,4 +1,6 @@
 /config/instances/*
 !/config/instances/.gitkeep
+/config/project/*
+!/config/project/.gitkeep
 
 /vendor

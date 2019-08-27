@@ -46,6 +46,7 @@ foreach ($upgradeBranches as $numericVersion => $branch) {
     }
 
     dbUpdate(__DIR__ . '/sql/' . $numericVersion . '.sql');
+    dbUpdate(__DIR__ . '/config/project/'. $numericVersion . '.sql');
     dbUpdate(__DIR__ . '/config/instances/' . $instance . '/' . $numericVersion . '.sql');
 
     $isFirst = false;
