@@ -7,8 +7,7 @@ namespace SourceBroker\Typo3Upgrade;
 $typo3RootDir = realpath(getcwd()) . '/';
 define('T3U_TYPO3_DIR', $typo3RootDir);
 
-$upgradeDirPx = strpos(__DIR__, 'vendor/');
-$upgradeDir = substr(__DIR__, 0, $upgradeDirPx);
+$upgradeDir = realpath( __DIR__ . '/../../..');
 define('T3U_UPGRADE_DIR', $upgradeDir);
 
 require_once(__DIR__ . '/../../autoload.php');
