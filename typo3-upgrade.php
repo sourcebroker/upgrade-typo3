@@ -28,6 +28,7 @@ $isFirst = true;
 
 foreach ($upgradeBranches as $numericVersion => $branch) {
     run('echo "---------------------- git checkout ' . $branch . '"');
+    run('git reset --hard');
     run('git checkout ' . $branch);
     run('rm -rf typo3_src typo3 index.php typo3conf/ext typo3temp vendor typo3conf/realurl_autoconf.php');
     run('git reset --hard');
