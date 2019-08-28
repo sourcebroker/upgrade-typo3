@@ -66,7 +66,9 @@ function getUpgradeBranches()
 
 function getDbConfiguration()
 {
-    $configurationJson = run('./vendor/bin/typo3cms configuration:showactive DB --json 2>/dev/null', true);
+    $configurationJson = run('php ./vendor/bin/typo3cms configuration:showactive DB --json', true);
+    // cleanup depreciations and any other stuff before json
+    $configurationJson = substr($configurationJson, strpos($configurationJson,'{'), strlen($configurationJson));
     $configuration = json_decode($configurationJson, true);
 
     if (isset($configuration['Connections']['Default'])) {
